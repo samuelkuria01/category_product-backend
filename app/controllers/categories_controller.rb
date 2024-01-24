@@ -12,10 +12,10 @@ class CategoriesController < ApplicationController
     def index
       if Category.table_exists?
         @categories = Category.all
-        @user_email = current_user.email if user_signed_in?
-        render json: @categories, only: [:name]
+        # @user_email = current_user.email if user_signed_in?
+        # render json: @categories, only: [:name]
       else
-        render json: { error: 'Categories table does not exist' }, status: :internal_server_error
+        # render json: { error: 'Categories table does not exist' }, status: :internal_server_error
       end
     end
     
@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
     def show
     #   @category = Category.find(params[:id])
     #  @products = @category.products
-    render json: @category
+    # render json: @category
     end
   
     # GET /categories/new
